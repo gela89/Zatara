@@ -1,0 +1,9 @@
+
+.orders-cont{
+  min-width: 70px;
+}
+.delete{
+  float: rigth;
+  position: relative;
+  color: red;
+}

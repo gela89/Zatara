@@ -1,0 +1,46 @@
+
+#item-cont{
+margin-top: 2rem;
+-webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+padding: 10px;
+border-radius: 10px;
+
+}
+
+
+
+
+.itemsObjConteiner, img{
+  width: 83%;
+  border-radius: 5px;
+}
+
+
+  #item-cont .Add-Order{
+  float: right;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #FF3B30;
+  color:white;
+  font-weight: 700;
+}
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.Price{
+  font-weight: bold;
+  color: #27ae60;
+}
