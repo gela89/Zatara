@@ -1,4 +1,4 @@
-import react from 'react'
+
 import ShowPajes from '../ShowPajes/ShowPajes'
 import './Tables.css'
 import {Link} from 'react-router-dom'

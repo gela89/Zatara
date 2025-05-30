@@ -1,4 +1,4 @@
-import react from 'react'
+
 import './Kitchen.css'
 import ShowPajes from '../ShowPajes/ShowPajes'
 import {Link} from 'react-router-dom'

@@ -9,7 +9,7 @@ export const data = [
       id: 1,
       img: img1,
       title:"SP-1 | სამზარეულო | თურქული",
-      model: "სამზარეულო",
+
       category: "Kitchen",
       material: "თურქული პრიალა ",
       producer: "zatara-dors",
@@ -23,7 +23,7 @@ export const data = [
       img: img2,
       category: "Tables",
       title:"მაგიდა MDF ლითონის ფეხებით",
-      model: "მაგიდა",
+
       size: "70*120 სმ",
       price: "199 ₾",
 
@@ -33,7 +33,6 @@ export const data = [
       id: 3,
       img: img3,
       code: "24ZRJU92",
-      model: "მაგიდა",
       category: "Tables",
       title: "გასაშლელი მაგიდა typ 92 EVORA",
       color: "მწვანე/მუხის ლეფკადა",
@@ -45,7 +44,6 @@ export const data = [
       id: 4,
       img: img4,
       title:"ღია ყავისფერი MDF სამზარეულო  მაღალი ხარისხის",
-      model: "სამზარეულო",
       category: "Kitchen",
       material: "თურქული პრიალა ",
       producer: "zatara-dors",
@@ -58,7 +56,6 @@ export const data = [
       id: 5,
       img: img5,
       title:"ღია ყავისფერი MDF სამზარეულო  მაღალი ხარისხის",
-      model: "Wardboards",
       category: "Wardboards",
       material: "თურქული პრიალა ",
       producer: "zatara-dors",

@@ -13,7 +13,6 @@ import {data} from './data'
 
 
 function Root(){
-const [objItem, setobjItem] =useState({})
 const [order,setOrder]=useState([])
 
 
@@ -73,7 +72,7 @@ const [order,setOrder]=useState([])
    
    
   
-
+<Footer/>
   </div>
     )
 
