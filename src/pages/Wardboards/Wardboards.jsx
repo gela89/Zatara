@@ -14,9 +14,11 @@ export default function Wardboards({Base_Objects,OnAddProduct}){
      </Link>
     
     <ShowPajes 
+      item={item}
       title={item.title}
       size={item.size}
       price={item.price}
+      addOrder={OnAddProduct}
      />
   </div>
           ))}

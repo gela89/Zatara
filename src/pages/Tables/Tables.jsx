@@ -2,7 +2,9 @@
 import ShowPajes from '../ShowPajes/ShowPajes'
 import './Tables.css'
 import {Link} from 'react-router-dom'
-export default function Tables({dataObject}){
+export default function Tables({dataObject,
+  OnAddProduct
+}){
   return(
     <main>
         
@@ -13,9 +15,11 @@ export default function Tables({dataObject}){
        
      </Link>
     <ShowPajes 
+      item={item}
       title={item.title}
       size={item.size}
       price={item.price}
+      addOrder={OnAddProduct}
      />
     </div>
           ))}

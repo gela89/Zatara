@@ -17,7 +17,7 @@ const [order,setOrder]=useState([])
 
 
   return(
-    //All Product category
+    //All Product category Routs
   <div className="Appcontainer">,
  
     <Header orders={order} 
@@ -33,14 +33,18 @@ const [order,setOrder]=useState([])
     <>
     <Main addOrder={addOrder}/>
     </>}/>
-     
+
   <Route path="/Kitchen" element={<Kitchen 
     dataObject={data.filter((item)=>
     item.category.includes('Kitchen')
     ) }
+    OnAddProduct={addOrder}
   />}/>
-  
-    <Route path="/Kitchen/:id" element={<ItemPaje Base_Objects={data}/>}/>
+  <Route path="/Kitchen/:id" element={
+  <ItemPaje
+     Base_Objects={data}
+     OnAddProduct={addOrder}
+   />}/> 
   
 
   <Route path="/Wardboards" element={<Wardboards
@@ -49,20 +53,21 @@ const [order,setOrder]=useState([])
   )}
   OnAddProduct={addOrder}
   />}/>
-
      <Route path="/Wardboards/:id" element={<ItemPaje
      Base_Objects={data}
      OnAddProduct={addOrder}
    />}/> 
   
+  
  <Route path="/Tables"  element={<Tables    dataObject={data.filter((item)=>
    item.category.includes('Tables')
     ) }
-    
+    OnAddProduct={addOrder}
  />}/>
-
-  <Route path="/Tables/:id" element={<ItemPaje 
+  <Route path="/Tables/:id" element={
+  <ItemPaje 
     Base_Objects={data}
+    OnAddProduct={addOrder}
   />}/>
 
           

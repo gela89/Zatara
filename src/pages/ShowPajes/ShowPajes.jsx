@@ -7,7 +7,7 @@ function ShowPajes(props){
 <h2>{props.title}</h2>
 <li>ზომა. {props.size}</li>
 <li>ფასი. {props.price}</li>
-
+<button onClick={()=>props.addOrder(props.item)}>კალათაში დამატება</button>
 </ul>
     </div>
     )

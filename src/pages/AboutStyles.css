@@ -1,13 +1,11 @@
 
-.Title-content{
+Title-content{
   width: 100%;
-  min-height: 450px;
+}
+
+@media (min-width: 768px) {
+  .Title-content{
+  
   
 }
-
-.acor-items{
-display: flex;
-gap: 2rem;
 }
-
-

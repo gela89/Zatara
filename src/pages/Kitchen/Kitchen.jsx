@@ -3,7 +3,7 @@ import './Kitchen.css'
 import ShowPajes from '../ShowPajes/ShowPajes'
 import {Link} from 'react-router-dom'
 
-export default function Kitchen({dataObject}){
+export default function Kitchen({dataObject,OnAddProduct}){
   return(
     <main>
         
@@ -14,9 +14,11 @@ export default function Kitchen({dataObject}){
      </Link>
     
     <ShowPajes 
+      item={item}
       title={item.title}
       size={item.size}
       price={item.price}
+      addOrder={OnAddProduct}
      />
   </div>
           ))}

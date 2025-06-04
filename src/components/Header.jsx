@@ -2,8 +2,9 @@ import './HeaderStyles.css'
 import { FaShoppingCart } from "react-icons/fa";
 import {useState} from 'react'
 import Order from './Order'
-import {Link, useLocation} from 'react-router-dom'
-import { IoHome } from "react-icons/io5";
+import { useLocation} from 'react-router-dom'
+import Navigation from './Navigation'
+
 
 function ShowOrder(props){
  
@@ -30,26 +31,7 @@ function Header(props){
     <>
 
       <div className="head-Title">
-     <Link to="/"><IoHome className="home-icon"/></Link>  
-  <div className="navigation-cont">
-    <h4>
-      <Link className="navigation" to="/About">ჩვენს შესახებ
-    </Link>
-     </h4>
-      <h4>
-        <Link className="navigation" to="/Kitchen">სამზარეილო</Link>
-      </h4>
-      
-       <h4>
-        <Link className="navigation" to="/Tables">მაგიდები</Link>
-       </h4>
-              <h4>
-        <Link className="navigation" to="/Wardboards">კარადები</Link>
-       </h4>
-  </div>
-     
-  
-      
+     <Navigation/>
      <div className='shopCard-cont'>
         <FaShoppingCart onClick={()=> setcardOpeen(cardOpeen = !cardOpeen)} className={`shopCard ${cardOpeen && 'active'}`} />
         {cardOpeen && (
@@ -61,7 +43,6 @@ function Header(props){
     </div>
     <header>
       <div className={presentation ? 'Home-page' : null}>
-        
       </div>
   </header>
     </>
