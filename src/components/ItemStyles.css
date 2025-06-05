@@ -4,12 +4,11 @@ margin-top: 2rem;
 -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
-padding: 10px;
+
 border-radius: 10px;
+padding: 10px;
 
 }
-
-
 
 
 .itemsObjConteiner, img{
@@ -30,7 +29,7 @@ border-radius: 10px;
   font-weight: 700;
 }
 h2 {
-  font-size: 18px;
+  font-size: 15px;
   margin: 10px 0;
 }
 

@@ -1,13 +1,13 @@
 main {
   display: grid;
-  grid-template-columns: 20% 20% 20%;
-  gap: 2rem;
-  padding: 10px;
+  grid-template-columns: 30% 30% 30%;
+  gap: 1rem;
+  justify-content: center;
 }
 
 @media (max-width: 520px) {
 main{
-grid-template-columns: 100%;
-
+grid-template-columns: 45% 45%;
+gap: 1rem;
 }
 }

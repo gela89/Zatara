@@ -1,13 +1,12 @@
 
 .Title-content{
-  width: 100%;
+  width: 95%;
   margin-top: 9rem;
-  padding: 1rem;
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
   .Title-content{
   
-    width: 100%;
 }
 }

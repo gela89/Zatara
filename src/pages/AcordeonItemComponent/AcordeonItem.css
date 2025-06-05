@@ -1,12 +1,13 @@
 
 .Acordeon-Cont{
   width: 100%;
- border-bottom: 2px solid grey;
+  border-bottom: 2px solid grey;
   margin-top: 2rem;
-  padding: 10px;
-
+  padding-bottom: 10px;
+ 
 }
 .title{
+  
   color:orange;
 }
 
