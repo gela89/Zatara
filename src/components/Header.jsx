@@ -3,20 +3,17 @@ import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import ScrollImageSlider from "./ScrollImageSlider";
 
-function Header(props) {
+function Header({ orders, onDelete }) {
   const location = useLocation();
-  const presentation = location.pathname === "/";
+  const isHomePage = location.pathname === "/";
 
   return (
-    <>
-      <header>
-        <div className="head-Title">
-          <Navigation orders={props.orders} onDelete={props.onDelete} />
-        </div>
-
-        {presentation && <ScrollImageSlider />}
-      </header>
-    </>
+    <header className="site-header">
+      <div className="navigation-wrapper">
+        <Navigation orders={orders} onDelete={onDelete} />
+      </div>
+      {isHomePage && <ScrollImageSlider />}
+    </header>
   );
 }
 

@@ -1,5 +1,6 @@
 .Appcontainer{
-
-
-
+overflow-x: hidden;
+overflow-y: hidden;
+width: 100%;
+border: solid 1px red;
 }

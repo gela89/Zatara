@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './scrollSlider.css';
-import { SlArrowLeft,SlArrowRight  } from "react-icons/sl";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
-import img1 from '../img/icture-1.jpg'
-import img2 from '../img/icture-2.png'
-import img3 from '../img/icture-3.jpg'
-import img4 from '../img/icture-4.jpg'
-import img5 from '../img/icture-5.jpg'
+import img1 from '../img/icture-1.jpg';
+import img2 from '../img/icture-2.png';
+import img3 from '../img/icture-3.jpg';
+import img4 from '../img/icture-4.jpg';
+import img5 from '../img/icture-5.jpg';
 
-
-
-const images = [img1, img2, img3, img4, img5 ];
+const images = [img1, img2, img3, img4, img5];
 
 const ScrollImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const scrollRef = useRef(null);
 
   // Responsive მოწყობილობის შემოწმება
   useEffect(() => {
@@ -26,23 +25,34 @@ const ScrollImageSlider = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // მობილურზე - scroll-სვლაზე რეაგირება
+  // მობილურზე - უსასრულო scroll
   useEffect(() => {
-    if (!isMobile) return;
+    if (!isMobile || !scrollRef.current) return;
+
+    const scrollContainer = scrollRef.current;
 
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const scrollFraction = scrollTop / maxScroll;
-      const index = Math.min(
-        images.length - 1,
-        Math.floor(scrollFraction * images.length)
-      );
+      const scrollLeft = scrollContainer.scrollLeft;
+      const maxScroll = scrollContainer.scrollWidth / 2;
+      const scrollFraction = (scrollLeft % maxScroll) / maxScroll;
+
+      const index = Math.floor(scrollFraction * images.length);
       setCurrentIndex(index);
+
+      // ავტომატური გადახტომა დასაწყისში/ბოლოში
+      if (scrollLeft <= 0) {
+        scrollContainer.scrollLeft = maxScroll;
+      } else if (scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        scrollContainer.scrollLeft = maxScroll - scrollContainer.clientWidth;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    scrollContainer.addEventListener('scroll', handleScroll);
+
+    // დასაწყისშივე შუაში გადაახტეს
+    scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2;
+
+    return () => scrollContainer.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
   // დესკტოპისთვის ღილაკები
@@ -55,21 +65,27 @@ const ScrollImageSlider = () => {
   };
 
   return (
-     <div className="slider-wrapper">
-    <div className="slider-container">
-      <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex}`}
-        className="slider-image"
-      />
-      {!isMobile && (
-        <div className="slider-controls">
-           <SlArrowLeft className='Slide-style' onClick={prevSlide} /> 
-          <SlArrowRight  className='Slide-style' onClick={nextSlide}/>
+    <div className="slider-wrapper">
+      {isMobile ? (
+        <div className="scroll-container" ref={scrollRef}>
+          {[...images, ...images].map((img, idx) => (
+            <img key={idx} src={img} alt={`Slide ${idx % images.length}`} className="scroll-image" />
+          ))}
+        </div>
+      ) : (
+        <div className="slider-container">
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex}`}
+            className="slider-image"
+          />
+          <div className="slider-controls">
+            <SlArrowLeft className='Slide-style' onClick={prevSlide} />
+            <SlArrowRight className='Slide-style' onClick={nextSlide} />
+          </div>
         </div>
       )}
     </div>
-  </div>
   );
 };
 

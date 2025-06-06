@@ -1,5 +1,5 @@
 .slider-image{
-    max-height: 600px;
+    height: 600px;
     width: 50%;
 }
 
@@ -10,11 +10,12 @@
     justify-content: center;
     flex-direction: column;
     padding: 1rem;
+    
 }    
 
 
 .slider-controls{
-        width: 100%;
+    width: 100%;
     position: absolute;
     display: flex;
     justify-content: space-around;
@@ -22,11 +23,36 @@
 }
 
 .Slide-style{
-        width: 35px;
+     width: 35px;
     height: 35px;
     background: beige;
     border-radius: 50%;
     padding: 5px;
-    
     cursor: pointer;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.scroll-image {
+
+  border: solid 2px grey;
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+@media (max-width: 768px) {
+  .slider-image{
+    width: 100%;
+    
+}
+.slider-container{
+  margin: auto;
+}
 }
