@@ -1,0 +1,32 @@
+.slider-image{
+    max-height: 600px;
+    width: 50%;
+}
+
+.slider-container{
+    width: 100%;
+   align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}    
+
+
+.slider-controls{
+        width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    gap: 13rem;
+}
+
+.Slide-style{
+        width: 35px;
+    height: 35px;
+    background: beige;
+    border-radius: 50%;
+    padding: 5px;
+    
+    cursor: pointer;
+}

@@ -19,6 +19,7 @@
   display: flex;
   margin:auto;
   gap: 1rem;
+  font-size: 20px;
 }
 
 /* Mobile Styles */
@@ -32,7 +33,7 @@
     flex-direction: column;
     position: absolute;
     width: 100%;
-    background-color:  #white;
+    background-color:  white;
     margin-top: 24rem;
     display: none;
     border-radius: 0 0 10px 10px;

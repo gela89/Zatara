@@ -1,6 +1,7 @@
-import './HeaderStyles.css';
-import { useLocation } from 'react-router-dom';
-import Navigation from './Navigation';
+import "./HeaderStyles.css";
+import { useLocation } from "react-router-dom";
+import Navigation from "./Navigation";
+import ScrollImageSlider from "./ScrollImageSlider";
 
 function Header(props) {
   const location = useLocation();
@@ -8,12 +9,12 @@ function Header(props) {
 
   return (
     <>
-      <div className="head-Title">
-        <Navigation orders={props.orders} onDelete={props.onDelete} />
-      </div>
-
       <header>
-        <div className={presentation ? 'Home-page' : null}></div>
+        <div className="head-Title">
+          <Navigation orders={props.orders} onDelete={props.onDelete} />
+        </div>
+
+        {presentation && <ScrollImageSlider />}
       </header>
     </>
   );
