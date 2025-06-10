@@ -2,19 +2,18 @@ import './App.css';
 import Header from './components/Header'
 import Main from './components/Main'
 import {useState} from 'react'
-import {Routes,Route} from 'react-router-dom'
 import About from './pages/About'
 import Footer from './components/Footer'
 import Kitchen from './pages/Kitchen/Kitchen'
 import Tables from './pages/Tables/Tables'
 import ItemPaje from './pages/ItemPaje/ItemPaje'
+import {Routes,Route} from 'react-router-dom'
 import Wardboards from './pages/Wardboards/Wardboards'
 import {data} from './data'
 
 
 function Root(){
 const [order,setOrder]=useState([])
-
 
   return(
     //All Product category Routs
@@ -69,20 +68,14 @@ const [order,setOrder]=useState([])
     Base_Objects={data}
     OnAddProduct={addOrder}
   />}/>
-
-          
-
    <Route path="/About" element={<About/>}/>
 </Routes>
-   
-   
-  
 <Footer/>
   </div>
     )
 
    
-   
+   // logic functionAliti
   function deleteOrder(id){
     setOrder(order.filter(el => el.id !==id));
     }
@@ -98,4 +91,6 @@ function addOrder(item){
     let newOrder =[...order,item];
     return newOrder;
   })}}
+  
+  
 export default Root;

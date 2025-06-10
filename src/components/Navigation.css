@@ -12,6 +12,7 @@
   font-size: 28px;
   cursor: pointer;
   display: none;
+  
 }
 
 /* Menu Links Default - Desktop */
@@ -20,8 +21,11 @@
   margin:auto;
   gap: 1rem;
   font-size: 20px;
+  
 }
-
+.LogoZatara{
+  display: none;
+}
 /* Mobile Styles */
 @media (max-width: 768px) {
   .menu-icon {
@@ -38,10 +42,20 @@
     display: none;
     border-radius: 0 0 10px 10px;
      z-index: 9999;
-     padding: 10px;
+     padding-left: 22px;
+     padding-bottom: 22px;
+     padding-top: 27px;
      top: -20rem;
-     
+     border-top: solid 2px grey;
   }
+
+
+.LogoZatara{
+  width: 20%;
+  display: block;
+  
+}
+
 
 .navigation-cont{
   justify-content: space-around;
@@ -53,11 +67,16 @@
 }
 
 .navigation {
+  
   color: black;
   
   font-weight: 500;
 }
 
+h4{
+  
+}
 .navigation:hover {
   text-decoration: underline;
 }
+

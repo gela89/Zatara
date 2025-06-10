@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import { useState } from 'react';
 import Order from './Order';
+import zataralogo from '../img/zataralogo-2.png'
 
 function ShowOrder({ orders, onDelete }) {
   return (
@@ -30,10 +31,14 @@ function Navigation({ orders, onDelete }) {
   const toggleCart = () => setCardOpen(prev => !prev);
 
   return (
-    <nav className="navigation-cont">
+    <div className="navigation-cont">
+
       <div className="menu-icon" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
+      <Link className="LogoZatara" to='/'>
+        <img src={zataralogo}  alt="Logo"/>
+      </Link>
 
       <div className={`menu-links ${menuOpen ? 'open' : ''}`}>
         <h4><Link className="navigation" to="/About">ჩვენს შესახებ</Link></h4>
@@ -57,7 +62,7 @@ function Navigation({ orders, onDelete }) {
           </div>
         )}
       </div>
-    </nav>
+    </div>
   );
 }
 
