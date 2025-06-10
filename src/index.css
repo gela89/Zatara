@@ -4,8 +4,9 @@
 }
 
 body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   width: 100%;
-  font-family: Arial, sans-serif;
+
   background-color: #FAF3E0;
 height: 100vh;
 

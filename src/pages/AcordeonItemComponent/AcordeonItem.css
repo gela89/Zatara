@@ -4,11 +4,14 @@
   border-bottom: 2px solid grey;
   margin-top: 2rem;
   padding-bottom: 10px;
- 
+ cursor: pointer;
+ font-size: 20px;
 }
 .title{
-  
   color:orange;
 }
 
   
+.Acordeon-Cont,p{
+font-size: 18px;
+}

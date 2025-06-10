@@ -4,7 +4,8 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  
+  /* მენიუს ფონის დასამალად, როცა მენიუ დახურულია */
+  /* overflow: hidden; */ /* თუ გინდა, რომ მენიუ არ ჩანდეს სანამ ბოლომდე არ გამოვა */
 }
 
 /* Toggle Icon */
@@ -12,20 +13,20 @@
   font-size: 28px;
   cursor: pointer;
   display: none;
-  
 }
 
 /* Menu Links Default - Desktop */
 .menu-links {
   display: flex;
-  margin:auto;
+  margin: auto;
   gap: 1rem;
   font-size: 20px;
-  
 }
-.LogoZatara{
+
+.LogoZatara {
   display: none;
 }
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .menu-icon {
@@ -37,46 +38,74 @@
     flex-direction: column;
     position: absolute;
     width: 100%;
-    background-color:  #FAF3E0;
-    margin-top: 24rem;
-    display: none;
+    background-color: #FAF3E0;
+    /* margin-top: 24rem;  ეს აღარ გვჭირდება, რადგან translateY გამოვიყენებთ */
     border-radius: 0 0 10px 10px;
-     z-index: 9999;
-     padding-left: 22px;
-     padding-bottom: 22px;
-     padding-top: 27px;
-     top: -20rem;
-     border-top: solid 2px grey;
+    z-index: 9998; /* ცოტა დავუწიოთ z-index-ს, თუ Backdrop-ს დავამატებთ */
+    padding-left: 22px;
+    padding-bottom: 22px;
+    padding-top: 27px;
+    border-top: solid 2px grey;
+    left: 0; /* დარწმუნდით, რომ მარცხნიდანაც 0-ზეა */
+
+    /* ***** აი ეს არის მთავარი ცვლილებები ანიმაციისთვის ***** */
+    /* საწყისი მდგომარეობა: გამჭვირვალე და გადაწეული ზემოთ */
+    transform: translateY(-100%); /* მენიუ თავიდან სრულად ზემოთაა აწეული */
+    opacity: 0; /* თავიდან უხილავია */
+    visibility: hidden; /* დარწმუნდება, რომ არ არის ინტერაქტიული */
+margin-top: 18rem;
+    /* ანიმაციის თვისებები */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s ease-out;
+    /* transition: all 0.5s ease-out;  ეს უფრო მოკლეა, მაგრამ ნაკლებად კონტროლირებადი */
   }
 
+  .LogoZatara {
+    width: 20%;
+    display: block;
+  }
 
-.LogoZatara{
-  width: 20%;
-  display: block;
-  
-}
-
-
-.navigation-cont{
-  justify-content: space-around;
-}
+  .navigation-cont {
+    justify-content: space-around;
+  }
 
   .menu-links.open {
-    display: flex;
+    /* როდესაც 'open' კლასი დაემატება */
+    transform: translateY(0); /* ჩამოვა თავის ნორმალურ პოზიციაზე */
+    opacity: 1; /* გახდება სრულად ხილვადი */
+    visibility: visible; /* ინტერაქტიული */
+  }
+
+  /* Optional: Backdrop / Overlay - ამასაც დავამატებთ აქ, თუ გსურს მენიუს გახსნისას ფონის გამუქება */
+  .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* ნახევრად გამჭვირვალე შავი */
+    z-index: 9997; /* მენიუს ქვემოთ */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+
+  .menu-backdrop.show {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .navigation {
-  
   color: black;
-  
   font-weight: 500;
 }
 
-h4{
-  
+h4 {
+  /* თუ h4-ებს ზედა და ქვედა მარგინი აქვთ, შეიძლება ჩამოცურებისას "დაახტნენ" ერთმანეთს,
+     შეგიძლია აქ ნულზე დასვა ან ლინკებს მისცე padding: */
+  margin: 0;
 }
+
 .navigation:hover {
   text-decoration: underline;
 }
-
