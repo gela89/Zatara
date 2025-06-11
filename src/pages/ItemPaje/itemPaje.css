@@ -117,7 +117,7 @@ body {
               transform 0.2s ease-in-out,
               box-shadow 0.3s ease-in-out;
  
-  max-width: 350px; /* მაქსიმალური სიგანე ოდნავ გაზრდილი */
+  width: 100%; /* მაქსიმალური სიგანე ოდნავ გაზრდილი */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* უფრო გამოკვეთილი, მაგრამ რბილი ჩრდილი */
   letter-spacing: 0.5px; /* ასოებს შორის მცირე დაშორება */
   text-transform: uppercase; /* დიდი ასოებით ტექსტი */

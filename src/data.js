@@ -21,7 +21,7 @@ export const data = [
       id: 2,
       img: img2,
       category: "Tables",
-      title:"მაგიდა MDF ლითონის ფეხებით",
+      title:"მაგიდა  ლითონის ფეხებით",
       size: "70*120 სმ",
       price: "199 ₾",
 
@@ -50,7 +50,7 @@ export const data = [
       color:"პრიალა ყავისფერი",
     },
         {
-//kitchen
+//Wardboards
       id: 5,
       img: img5,
       title:"ღია ყავისფერი MDF სამზარეულო  მაღალი ხარისხის",

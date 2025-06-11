@@ -19,16 +19,12 @@ function ItemPaje({ Base_Objects = [], OnAddProduct }) {
       <img src={item.img} alt={item.title} className='item-image'/>
 
       <div className="item-details">
-        <h1 className='item-title'>{item.title}</h1>
+        <h2 className='item-title'>{item.title}</h2>
         <ul className='item-details-list'>
+          <li>მასალა: {item.material}</li>
+          <li> {item.producer} </li>
           <li>
-            <strong>მასალა: </strong>  {item.material}
-          </li>
-          <li>
-            <strong>მწარმოებელი: </strong>  {item.producer}
-          </li>
-          <li>
-            <strong>ზომა: </strong> {item.size}
+            ზომა: {item.size}
           </li>
         </ul>
         <p className='item-price'>{item.price} </p>
@@ -38,6 +34,7 @@ function ItemPaje({ Base_Objects = [], OnAddProduct }) {
           დამატება კალათაში
         </button>
       </div>
+      item paje
     </div>
   );
 }

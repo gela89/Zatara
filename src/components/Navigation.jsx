@@ -37,7 +37,7 @@ function Navigation({ orders, onDelete }) {
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
       <Link className="LogoZatara" to='/'>
-        <img src={zataralogo}  alt="Logo"/>
+        <img id="zataralogo" src={zataralogo}  alt="Logo"/>
       </Link>
 
       <div className={`menu-links ${menuOpen ? 'open' : ''}`}>

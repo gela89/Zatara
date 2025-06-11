@@ -1,33 +1,21 @@
-
-#item-cont{
-margin-top: 2rem;
--webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
-
-border-radius: 10px;
-padding: 10px;
-
+#item-cont {
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  
 }
 
+#HomePajeFotos {
+  width: 100%;
+  height: 200px;
+}
 
-.itemsObjConteiner, img{
+.itemsObjConteiner, img {
   width: 83%;
   border-radius: 5px;
 }
 
-
-  #item-cont .Add-Order{
-  float: right;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  border-radius: 50%;
-  text-align: center;
-  background-color: #FF3B30;
-  color:white;
-  font-weight: 700;
-}
 h2 {
   font-size: 15px;
   margin: 10px 0;
@@ -39,69 +27,8 @@ p {
   color: #333;
 }
 
-.Price{
+.Price {
   font-weight: bold;
   color: #27ae60;
 }
 
-/* ItemPaje.css (ან შენი product-card.css) */
-
-/* ... შენი არსებული add-to-cart-button სტილები ... */
-
-
-/* ***** სტილები პროდუქტის ბარათებზე ღილაკებისთვის ***** */
-
-.item-card-add-button, /* ან #item-cont .Add-Order თუ ამ კლასს ინარჩუნებ */
-.add-to-card-button { /* ეს იყო შენი არსებული კლასი სქრინშოთზე */
-  background-color: #27ae60; /* იგივე მწვანე */
-  color: white;
-  border: none;
-  border-radius: 50%; /* მრგვალი ფორმა */
-  width: 40px; /* პატარა ზომა */
-  height: 40px;
-  line-height: 40px; /* ტექსტის ვერტიკალური გასწორება */
-  text-align: center;
-  font-size: 1.5rem; /* პლუსის ხატულისთვის */
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* რბილი ჩრდილი */
-  transition: background-color 0.3s ease-in-out,
-              transform 0.2s ease-in-out,
-              box-shadow 0.3s ease-in-out;
-  /* პოზიციონირება ბარათის შიგნით (დამოკიდებულია ბარათის სტრუქტურაზე) */
-  position: absolute; /* თუ გინდა, რომ კუთხეში იყოს */
-  bottom: 10px; /* ან რამდენიც გინდა */
-  right: 10px; /* ან რამდენიც გინდა */
-  z-index: 2; /* რომ კონტენტის თავზე იყოს */
-}
-
-.item-card-add-button:hover,
-.add-to-card-button:hover {
-  background-color: #229954;
-  transform: scale(1.1); /* ოდნავ გაზრდა hover-ზე */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.item-card-add-button:active,
-.add-to-card-button:active {
-  background-color: #1e8449;
-  transform: scale(0.95); /* ოდნავ შემცირება active-ზე */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* თუ პროდუქტის ბარათი არის flexbox-ით */
-.product-card { /* ეს არის შენი პროდუქტის ბარათის კონტეინერი */
-    position: relative; /* აუცილებელია, თუ შიგნით absolute-ს იყენებ */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* ან space-around */
-    /* ... სხვა სტილები product-card-ისთვის ... */
-}
-
-/* თუ შენი ბარათის ფასი და ღილაკი ერთ ხაზზეა */
-.product-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px; /* ან რამდენიც გინდა */
-}

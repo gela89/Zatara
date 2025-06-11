@@ -11,7 +11,7 @@ export default function Tables({dataObject,
      {dataObject.map(item =>(
    <div key={item.id } className="TablesCont">
      <Link to={`/Tables/${item.id}`}>
-       <img src={item.img} alt="Tables-foto"/>
+       <img id="HomePajeFotos" src={item.img} alt="Tables-foto"/>
        
      </Link>
     <ShowPajes 

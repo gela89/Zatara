@@ -10,7 +10,7 @@ export default function Wardboards({Base_Objects,OnAddProduct}){
      {Base_Objects.map(item =>(
    <div key={item.id } className="TablesCont">
      <Link to={`/Wardboards/${item.id}`}>
-       <img src={item.img} alt="Wardboards-foto"/>
+       <img id="HomePajeFotos" src={item.img} alt="Wardboards-foto"/>
      </Link>
     
     <ShowPajes 

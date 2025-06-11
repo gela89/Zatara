@@ -1,12 +1,7 @@
-main{
-  
-}
 
 .TablesCont{
-  margin-top: 2rem;
--webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+  background-color: white;
+ margin-top: 2rem;
 padding: 10px;
 border-radius: 10px;
   width: 80%;
@@ -18,3 +13,4 @@ border-radius: 10px;
 li{
   list-style: none;
 }
+

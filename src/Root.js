@@ -29,9 +29,9 @@ const [order,setOrder]=useState([])
   />}/>
     
 <Route path="/" element={
-    <>
-    <Main addOrder={addOrder}/>
-    </>}/>
+    
+    <Main/>
+    }/>
 
   <Route path="/Kitchen" element={<Kitchen 
     dataObject={data.filter((item)=>

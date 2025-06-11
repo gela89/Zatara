@@ -10,7 +10,7 @@ export default function Kitchen({dataObject,OnAddProduct}){
      {dataObject.map(item =>(
    <div key={item.id } className="TablesCont">
      <Link to={`/Kitchen/${item.id}`}>
-       <img src={item.img} alt="kitchen-foto"/>
+       <img id="HomePajeFotos" src={item.img} alt="kitchen-foto"/>
      </Link>
     
     <ShowPajes 

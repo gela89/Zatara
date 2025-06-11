@@ -8,7 +8,7 @@ function Main(props){
   return(
     <main>
       {data.map(el=>(
-      <Items obj={el} addOrder={props.addOrder}  />
+      <Items obj={el} />
       ))}
     </main>
     )

@@ -1,0 +1,19 @@
+
+.TablesCont{
+  background-color: white;
+ margin-top: 2rem;
+padding: 10px;
+border-radius: 10px;
+  width: 80%;
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  list-style: none;
+}
+
+#HomePajeFotos{
+  width: 100%;
+}
