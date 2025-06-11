@@ -9,10 +9,9 @@ export const data = [
       id: 1,
       img: img1,
       title:"SP-1 | სამზარეულო | თურქული",
-
       category: "Kitchen",
       material: "თურქული პრიალა ",
-      producer: "zatara-dors",
+      producer: "zatara",
       size: "1.80 მ",
       price: "1250,00 ₾",
       color:"პრიალა ყავისფერი",
@@ -23,7 +22,6 @@ export const data = [
       img: img2,
       category: "Tables",
       title:"მაგიდა MDF ლითონის ფეხებით",
-
       size: "70*120 სმ",
       price: "199 ₾",
 
