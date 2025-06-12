@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import { useState } from 'react';
 import Order from './Order';
-import zataralogo from '../img/zataralogo-2.png'
+import zataralogo from '../img/zataralogo-4.png'
 
 function ShowOrder({ orders, onDelete }) {
   return (
