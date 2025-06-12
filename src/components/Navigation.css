@@ -7,13 +7,11 @@
 
 }
 
-<<<<<<< HEAD
+HEAD
 #zataralogo{
   width: 100%;
 }
-=======
 
->>>>>>> 1d3cae53c426b64d0a9aa820e6aeeef767bc2a43
 
 .menu-icon {
   font-size: 28px;
@@ -33,6 +31,19 @@
   display: none;
 }
 
+
+@media (min-width: 768px){
+  .LogoZatara {
+  display: block;
+  width: 15%;
+}
+
+.menu-links{
+font-size: 25px;
+margin-left: 2rem;
+}
+
+}
 
 @media (max-width: 768px) {
   .menu-icon {

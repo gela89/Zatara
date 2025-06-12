@@ -1,7 +1,7 @@
 .site-header {
   width: 100%;
   position: relative;
-  background-color: #d1d7d6;
+  background-color: #FAF3E0;
   border-radius: 5px;
   
 }
@@ -104,6 +104,12 @@
 }
 
 /* RESPONSIVE */
+
+@media (min-width: 768px) {
+  .navigation-wrapper {
+height: 200px;
+  }
+}
 @media (max-width: 768px) {
   .navigation-wrapper {
     width: 100%;
