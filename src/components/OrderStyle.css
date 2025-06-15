@@ -1,9 +1,25 @@
-
-.orders-cont{
-  min-width: 70px;
+.shop-order-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 320px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
 }
-.delete{
-  float: rigth;
-  position: relative;
-  color: red;
+
+.shop-order-wrapper.open {
+  transform: translateX(0);
+}
+
+.ShowOrder {
+  padding: 1rem;
+}
+.emprty {
+  padding: 2rem;
+  text-align: center;
 }

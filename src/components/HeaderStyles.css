@@ -46,7 +46,7 @@
 .shopCard-cont {
   display: flex;
   align-items: center;
-  font-size: 28px;
+ cursor: pointer;
   position: relative;
 }
 
@@ -125,4 +125,9 @@ height: 200px;
   .home-icon {
     margin-top: 0;
   }
+}
+
+.shopCard-cont {
+  font-size: 40px;
+  margin-right: 2rem;
 }

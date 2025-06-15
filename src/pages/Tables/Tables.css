@@ -8,6 +8,7 @@ border-radius: 10px;
   flex-wrap: nowrap;
   display: flex;
   flex-direction: column;
+  border: solid 2px grey;
 }
 
 li{
