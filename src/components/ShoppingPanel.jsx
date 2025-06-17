@@ -1,34 +1,59 @@
+import React from 'react';
 import Order from './Order';
-import './OrderStyle.css'; // ან შენი CSS სადაც გინდა
+import './OrderStyle.css';
 
 function ShowOrder({ orders, onDelete }) {
+  // გამოთვალეთ ჯამური თანხა
+  const totalPrice = orders.reduce((acc, el) => {
+    // დარწმუნდით, რომ price რიცხვია
+    const itemPrice = parseFloat(el.price.toString().replace(' ლ', ''));
+    const itemQuantity = el.quantity || 1;
+    return acc + (itemPrice * itemQuantity);
+  }, 0);
+
   return (
-    <div className="ShowOrder">
-      {orders.map((el, id) => (
-        <Order key={id} elements={el} onDelete={onDelete} />
-      ))}
+    <>
+      <div className="order-items-list">
+        {orders.map((el) => ( // გამოიყენეთ el.id for key თუ უნიკალურია
+          <Order key={el.id} elements={el} onDelete={onDelete} />
+        ))}
+      </div>
+      <div className="total-amount">
+        <span>ჯამი:</span>
+        <span>{totalPrice.toFixed(2)} ლ</span>
+      </div>
+    </>
+  );
+}
+
+function EmptyOrder() {
+  return (
+    <div className="empty-order-message">
+      <h2>კალათა ცარიელია!</h2>
+      <p>დაამატეთ პროდუქტები საყიდლების გასაგრძელებლად.</p>
     </div>
   );
 }
 
-function EmrtyOrder() {
+function ShoppingPanel({ orders, onDelete, cardOpen, innerRef, onClose }) {
   return (
-    <div className="emprty">
-      <h2>Shop Box Empty!</h2>
-    </div>
-  );
-}
+    <div className={`shop-order-wrapper ${cardOpen ? 'open' : ''}`} ref={innerRef}>
+      <div className="shop-order-header">
+        <h2>კალათა</h2>
+        <span className="close-btn" onClick={onClose}>&times;</span>
+      </div>
 
-function ShoppingPanel({ orders, onDelete, cardOpen, innerRef }) {
-  return (
-    <div
-      className={`shop-order-wrapper ${cardOpen ? 'open' : ''}`}
-      ref={innerRef}
-    >
       {orders.length > 0 ? (
         <ShowOrder orders={orders} onDelete={onDelete} />
       ) : (
-        <EmrtyOrder />
+        <EmptyOrder />
+      )}
+
+      {orders.length > 0 && (
+        <div className="shop-actions">
+          <button className="checkout-btn">შეკვეთის გაფორმება</button>
+          <button className="continue-shopping-btn">გაგრძელება</button>
+        </div>
       )}
     </div>
   );

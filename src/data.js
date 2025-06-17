@@ -13,7 +13,7 @@ export const data = [
       material: "თურქული პრიალა ",
       producer: "zatara",
       size: "1.80 მ",
-      price: "1250,00 ₾",
+      price: "1250,00 ",
       color:"პრიალა ყავისფერი",
     },
     {
@@ -23,7 +23,7 @@ export const data = [
       category: "Tables",
       title:"მაგიდა  ლითონის ფეხებით",
       size: "70*120 სმ",
-      price: "199 ₾",
+      price: "199 ",
 
     },
     
@@ -35,30 +35,30 @@ export const data = [
       title: "გასაშლელი მაგიდა typ 92 EVORA",
       color: "მწვანე/მუხის ლეფკადა",
       size: "220×90; 220×100",
-      price: "500.00 ₾",
+      price: "500.00 ",
   },
     {
 //kitchen
       id: 4,
       img: img4,
-      title:"ღია ყავისფერი MDF სამზარეულო  მაღალი ხარისხის",
+      title:"MDF სამზარეულო  მაღალი ხარისხის",
       category: "Kitchen",
       material: "თურქული პრიალა ",
       producer: "zatara-dors",
       size: "1.80 მ",
-      price: "1250,00 ₾",
+      price: "1250,00 ",
       color:"პრიალა ყავისფერი",
     },
         {
 //Wardboards
       id: 5,
       img: img5,
-      title:"ღია ყავისფერი MDF სამზარეულო  მაღალი ხარისხის",
+      title:"MDF სამზარეულო  მაღალი ხარისხის",
       category: "Wardboards",
       material: "თურქული პრიალა ",
       producer: "zatara-dors",
       size: "1.80 მ",
-      price: "1250,00 ₾",
+      price: "1250,00 ",
       color:"პრიალა ყავისფერი",
     },
 ];

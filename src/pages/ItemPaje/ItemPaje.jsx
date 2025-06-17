@@ -34,7 +34,7 @@ function ItemPaje({ Base_Objects = [], OnAddProduct }) {
           დამატება კალათაში
         </button>
       </div>
-      item paje
+   
     </div>
   );
 }

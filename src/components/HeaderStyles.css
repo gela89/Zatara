@@ -48,6 +48,7 @@
   align-items: center;
  cursor: pointer;
   position: relative;
+  font-size: 35px;
 }
 
 .shopCard-cont .ShowOrder,
@@ -106,6 +107,11 @@
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
+
+  .shopCard-cont {
+  font-size: 40px;
+  margin-right: 2rem;
+}
   .navigation-wrapper {
 height: 200px;
   }
@@ -127,7 +133,3 @@ height: 200px;
   }
 }
 
-.shopCard-cont {
-  font-size: 40px;
-  margin-right: 2rem;
-}

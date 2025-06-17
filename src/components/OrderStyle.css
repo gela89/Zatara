@@ -1,25 +1,211 @@
+/* General body styling for context */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll when panel is out */
+}
+
+/* Shop Order Wrapper Styles */
 .shop-order-wrapper {
-  position: fixed;
+  position: fixed; /* Use fixed for sticking to viewport */
   top: 0;
-  right: 0;
-  transform: translateX(100%);
-  width: 320px;
-  height: 100vh;
+  right: -350px; /* Initially hidden outside the viewport */
+  width: 350px; /* Adjust as needed */
+  height: 100vh; /* Full viewport height */
   background-color: #fff;
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease-in-out;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  transition: right 0.4s ease-out; /* Smoother transition */
   z-index: 1000;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width/height */
 }
 
 .shop-order-wrapper.open {
-  transform: translateX(0);
+  right: 0; /* Visible when open */
 }
 
-.ShowOrder {
-  padding: 1rem;
+/* Header for the shopping panel */
+.shop-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee; /* Light separator */
 }
-.emprty {
-  padding: 2rem;
+
+.shop-order-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+  font-weight: 600;
+}
+
+.shop-order-header .close-btn {
+  font-size: 28px; /* Larger close icon */
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease-in-out;
+}
+
+.shop-order-header .close-btn:hover {
+  color: #333;
+}
+
+/* Container for order items, allowing scroll if many items */
+.order-items-list {
+  flex-grow: 1; /* Takes available space */
+  overflow-y: auto; /* Enable vertical scroll if content overflows */
+  padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Styles for individual order items */
+.orders-cont {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 8px; /* Slightly more rounded corners */
+  background-color: #fefefe; /* Very light background */
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.orders-cont img {
+  width: 80px; /* Slightly larger image */
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.orders-cont .item-details {
+  flex-grow: 1;
+  display: flex; /* Use flex for details */
+  flex-direction: column; /* Stack name and price */
+  justify-content: center;
+}
+
+.orders-cont h6 {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.orders-cont .price-quantity {
+  display: flex;
+  align-items: baseline; /* Align prices at baseline */
+  font-size: 15px;
+  color: #555;
+}
+
+.orders-cont .Price {
+  margin: 0;
+  font-weight: bold;
+  color: #e44d26; /* Modern orange for price */
+  margin-right: 5px; /* Space between price and quantity */
+}
+
+.orders-cont .quantity {
+  font-size: 13px;
+  color: #888;
+}
+
+.orders-cont .delete {
+  position: absolute;
+  top: 8px; /* Position closer to top-right corner */
+  right: 8px;
+  font-size: 22px; /* Larger delete icon */
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.orders-cont .delete:hover {
+  color: #dc3545; /* Red on hover */
+}
+
+/* Total amount section */
+.total-amount {
+  margin-top: 20px; /* Space from last item or empty message */
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-amount span:last-child { /* Target the price span */
+  color: #007bff; /* Blue for total price */
+}
+
+/* Buttons section */
+.shop-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* More space between buttons */
+}
+
+.shop-actions button {
+  padding: 14px 25px; /* Larger padding for buttons */
+  border: none;
+  border-radius: 6px; /* Slightly more rounded */
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  font-weight: 600;
+}
+
+.shop-actions .checkout-btn {
+  background-color: #28a745; /* Green for checkout */
+  color: #fff;
+}
+
+.shop-actions .checkout-btn:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.shop-actions .continue-shopping-btn {
+  background-color: #f8f9fa; /* Light grey for continue shopping */
+  color: #333;
+  border: 1px solid #ced4da;
+}
+
+.shop-actions .continue-shopping-btn:hover {
+  background-color: #e2e6ea;
+  transform: translateY(-1px);
+}
+
+/* Empty order message */
+.empty-order-message {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; /* Stack message and text */
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #777;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.empty-order-message h2 {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 20px;
+}
+
+.empty-order-message p {
+  font-size: 16px;
+  line-height: 1.5;
 }

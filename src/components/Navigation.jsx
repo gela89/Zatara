@@ -29,6 +29,11 @@ function Navigation({ orders, onDelete }) {
     };
   }, [cardOpen]);
 
+
+const HandleCloseOrder =()=>{
+ setCardOpen(false)
+}
+
   return (
     <div className="navigation-cont">
       {/* მენიუ და ლოგო */}
@@ -57,6 +62,7 @@ function Navigation({ orders, onDelete }) {
           onDelete={onDelete}
           cardOpen={cardOpen}
           innerRef={cartRef}
+          onClose={HandleCloseOrder}
         />
       </div>
     </div>
