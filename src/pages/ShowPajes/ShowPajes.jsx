@@ -5,8 +5,8 @@ function ShowPajes(props){
     <div className='itemsObjConteiner'>
 <ul> 
 <h2>{props.title}</h2>
-<li>ზომა. {props.size}</li>
-<li>ფასი. {props.price}</li>
+<p>ზომა. {props.size}</p>
+<p>ფასი. {props.price}</p>
 
 </ul>
 

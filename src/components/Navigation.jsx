@@ -1,18 +1,16 @@
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
-import { useState } from 'react';
-//import Order from './Order';
+import { useState, useRef, useEffect } from 'react';
 import ShoppingPanel from './ShoppingPanel'
 import zataralogo from '../img/zataralogo-4.png'
-import { useRef, useEffect } from 'react';
-
-
 
 function Navigation({ orders, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cardOpen, setCardOpen] = useState(false);
+
   const cartRef = useRef();
+  const menuRef = useRef();
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const toggleCart = () => setCardOpen(prev => !prev);
@@ -29,14 +27,24 @@ function Navigation({ orders, onDelete }) {
     };
   }, [cardOpen]);
 
+  useEffect(() => {
+    function handleClickOutsideMenu(e) {
+      if (menuOpen && menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutsideMenu);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideMenu);
+    };
+  }, [menuOpen]);
 
-const HandleCloseOrder =()=>{
- setCardOpen(false)
-}
+  const HandleCloseOrder = () => {
+    setCardOpen(false);
+  }
 
   return (
     <div className="navigation-cont">
-      {/* მენიუ და ლოგო */}
       <div className="menu-icon" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
@@ -45,11 +53,11 @@ const HandleCloseOrder =()=>{
         <img id="zataralogo" src={zataralogo} alt="Logo" />
       </Link>
 
-      <div className={`menu-links ${menuOpen ? 'open' : ''}`}>
-        <h4><Link className="navigation" to="/About">ჩვენს შესახებ</Link></h4>
-        <h4><Link className="navigation" to="/Kitchen">სამზარეულო</Link></h4>
-        <h4><Link className="navigation" to="/Tables">მაგიდები</Link></h4>
-        <h4><Link className="navigation" to="/Wardboards">კარადები</Link></h4>
+      <div className={`menu-links ${menuOpen ? 'open' : ''}`} ref={menuRef}>
+        <h4 id='nav-styl-titl'><Link className="navigation" to="/About">ჩვენს შესახებ</Link></h4>
+        <h4 id='nav-styl-titl'><Link className="navigation" to="/Kitchen">სამზარეულო</Link></h4>
+        <h4 id='nav-styl-titl'><Link className="navigation" to="/Tables">მაგიდები</Link></h4>
+        <h4 id='nav-styl-titl'><Link className="navigation" to="/Wardboards">კარადები</Link></h4>
       </div>
 
       <div className="shopCard-cont">

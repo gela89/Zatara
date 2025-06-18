@@ -14,7 +14,7 @@ function About(){
     }
   return(
   <div className="Title-content">
-   <h2>ხშირად დასმული კითხვები</h2>
+   <h1>ხშირად დასმული კითხვები</h1>
       {AcordeonData.map((item)=>(
   <AcordeonItem className="acor-items"
    setValue={indexValue}

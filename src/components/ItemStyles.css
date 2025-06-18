@@ -1,9 +1,10 @@
 #item-cont {
-  margin-top: 2rem;
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px;
-  border: solid 3px grey ;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin-top: 2rem;
+    background-color: #f4e0bc;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 3px grey;
 }
 
 #HomePajeFotos {

@@ -1,5 +1,4 @@
 
-import './Kitchen.css'
 import ShowPajes from '../ShowPajes/ShowPajes'
 import {Link} from 'react-router-dom'
 
@@ -8,7 +7,7 @@ export default function Kitchen({dataObject,OnAddProduct}){
     <main>
         
      {dataObject.map(item =>(
-   <div key={item.id } className="TablesCont">
+   <div key={item.id } id="item-cont">
      <Link to={`/Kitchen/${item.id}`}>
        <img id="HomePajeFotos" src={item.img} alt="kitchen-foto"/>
      </Link>

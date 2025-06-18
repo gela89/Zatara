@@ -1,6 +1,6 @@
 
 import ShowPajes from '../ShowPajes/ShowPajes'
-import './Tables.css'
+
 import {Link} from 'react-router-dom'
 export default function Tables({dataObject,
   OnAddProduct
@@ -9,7 +9,7 @@ export default function Tables({dataObject,
     <main>
         
      {dataObject.map(item =>(
-   <div key={item.id } className="TablesCont">
+   <div key={item.id } id="item-cont">
      <Link to={`/Tables/${item.id}`}>
        <img id="HomePajeFotos" src={item.img} alt="Tables-foto"/>
        

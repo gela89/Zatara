@@ -12,7 +12,14 @@ HEAD
   width: 100%;
 }
 
-
+#nav-styl-titl{
+    margin: 0;
+    border-bottom: 2px solid black;
+    margin-top: 0rem;
+    padding-bottom: 3px;
+    width: 88%;
+    color: black;
+}
 .menu-icon {
   font-size: 28px;
   cursor: pointer;
@@ -32,23 +39,11 @@ HEAD
 }
 
 
-@media (min-width: 768px){
-  .LogoZatara {
-  display: block;
-  width: 15%;
-}
-
-.menu-links{
-font-size: 25px;
-
-}
-
-}
 
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
-    z-index: 9999;
+    z-index: 100;
     padding: 8px;
     display: flex;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -95,7 +90,7 @@ margin-top: 18rem;
   }
 
   .menu-links.open {
-
+    background-color: white;
     transform: translateY(0); 
     opacity: 1; 
     visibility: visible; 
@@ -136,3 +131,26 @@ h4 {
   text-decoration: underline;
 }
 
+@media (min-width: 768px){
+  .LogoZatara {
+  display: block;
+  width: 15%;
+}
+
+#nav-styl-titl{
+  border: none;
+          background: lightblue;
+        text-align: center;
+        border-radius: 10px;
+}
+.navigation{
+font-weight: 700;
+}
+
+.menu-links{
+font-size: 25px;
+width: 67%;
+margin-left: 71px;
+}
+
+}
