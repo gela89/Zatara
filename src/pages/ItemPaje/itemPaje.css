@@ -1,95 +1,87 @@
 /* ItemPaje.css */
 
-/* ძირითადი კონტეინერი */
 .item-page-container {
-  display: flex; /* Flexbox-ს გამოვიყენებთ სურათისა და დეტალების გვერდიგვერდ დასალაგებლად */
-  flex-direction: column; /* ნაგულისხმევად სვეტებად მობილურისთვის */
-  align-items: center; /* ცენტრში განლაგება */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  max-width: 1200px; /* მაქსიმალური სიგანე დესკტოპზე */
-  margin: 30px auto; /* ცენტრში გასწორება ჰორიზონტალურად და ზედა მარგინი */
-  background-color: #fff; /* თეთრი ფონი */
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* რბილი ჩრდილი */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* პროდუქტის სურათი */
 .item-image {
-  width: 100%; /* ნაგულისხმევად მთელ სიგანეზე მობილურზე */
-  max-width: 600px; /* მაქსიმალური სიგანე დესკტოპზე */
-  height: auto; /* სიმაღლის ავტომატური რეგულირება პროპორციების შესანარჩუნებლად */
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 8px;
-  object-fit: cover; /* დარწმუნდება, რომ სურათი კონტეინერს ავსებს პროპორციების შენარჩუნებით */
-  margin-bottom: 25px; /* დაშორება ინფორმაციისგან მობილურზე */
+  object-fit: cover;
+  margin-bottom: 25px;
 }
 
-/* პროდუქტის ინფორმაციის კონტეინერი */
 .item-details {
   width: 100%;
-  padding: 0 15px; /* მცირე დაშორება გვერდებიდან */
+  padding: 0 15px;
 }
 
-/* სათაური (პროდუქტის სახელი) */
 .item-title {
-  font-size: 2.2rem; /* დიდი ფონტი */
-  color: #333; /* მუქი რუხი ფერი */
+  font-size: 2.2rem;
+  color: #333;
   margin-bottom: 20px;
-  text-align: center; /* ცენტრში გასწორება მობილურზე */
-  line-height: 1.3; /* ხაზთაშორისი სიმაღლე */
+  text-align: center;
+  line-height: 1.3;
 }
 
-/* დეტალების სია */
 .item-details-list {
-  list-style: none; /* სიის ნიშნულების მოშორება */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* თითოეული დეტალის ელემენტი */
 .item-details-list li {
-  font-size: 1.15rem; /* შედარებით დიდი ფონტი */
-  color: #555; /* საშუალო რუხი ფერი */
+  font-size: 1.15rem;
+  color: #555;
   margin-bottom: 12px;
   line-height: 1.5;
-  display: flex; /* Flexbox-ს გამოვიყენებთ ტექსტის დაწყებისთვის */
-  align-items: baseline; /* ტექსტის გასწორება */
+  display: flex;
+  align-items: baseline;
 }
 
-/* სპეციალური სტილი ფასისთვის */
 .item-price {
-  font-size: 1.8rem; /* ფასის უფრო დიდი ფონტი */
-  font-weight: bold; /* სქელი შრიფტი */
-  color: #27ae60; /* მწვანე ფერი ფასისთვის, როგორც წინა მაგალითში */
-  margin-top: 20px; /* დაშორება წინა ელემენტისგან */
-  text-align: center; /* ცენტრში გასწორება */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-top: 20px;
+  text-align: center;
 }
 
-/* Responsive - დესკტოპის სტილები */
 @media (min-width: 769px) {
   .item-page-container {
-    flex-direction: row; /* დესკტოპზე სურათი და დეტალები გვერდიგვერდ */
-    justify-content: space-between; /* სივრცის თანაბრად გადანაწილება */
-    align-items: flex-start; /* ელემენტების ზედა ნაწილის გასწორება */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .item-image {
-    width: 48%; /* სურათი იკავებს კონტეინერის თითქმის ნახევარს */
-    margin-bottom: 0; /* მოვაშოროთ ქვედა მარგინი */
-    margin-right: 4%; /* დაშორება დეტალებისგან */
+    width: 48%;
+    margin-bottom: 0;
+    margin-right: 4%;
   }
 
   .item-details {
-    width: 48%; /* დეტალები იკავებს კონტეინერის თითქმის ნახევარს */
-    padding: 0; /* მოვაშოროთ გვერდითი padding */
+    width: 48%;
+    padding: 0;
   }
 
   .item-title {
-    font-size: 3rem; /* დესკტოპზე კიდევ უფრო დიდი სათაური */
-    text-align: left; /* მარცხნივ გასწორება */
+    font-size: 3rem;
+    text-align: left;
   }
 
   .item-details-list li {
-    font-size: 1.3rem; /* დესკტოპზე უფრო დიდი დეტალების ფონტი */
+    font-size: 1.3rem;
   }
 
   .item-price {
@@ -99,49 +91,43 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* სტანდარტული, წასაკითხი ფონტი */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-
 .add-to-cart-button {
-  background-color: #27ae60; /* მწვანე ფონი */
-  color: white; /* თეთრი ტექსტი */
+  background-color: #27ae60;
+  color: white;
   border: none;
-  border-radius: 8px; /* მომრგვალებული კუთხეები */
-  padding: 15px 30px; /* შიდა დაშორება */
-  font-size: 1.25rem; /* ოდნავ გაზრდილი ფონტი */
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
-  /* გაუმჯობესებული transition: რამდენიმე თვისების ანიმაცია ერთდროულად */
   transition: background-color 0.3s ease-in-out,
               transform 0.2s ease-in-out,
               box-shadow 0.3s ease-in-out;
- 
-  width: 100%; /* მაქსიმალური სიგანე ოდნავ გაზრდილი */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* უფრო გამოკვეთილი, მაგრამ რბილი ჩრდილი */
-  letter-spacing: 0.5px; /* ასოებს შორის მცირე დაშორება */
-  text-transform: uppercase; /* დიდი ასოებით ტექსტი */
-  outline: none; /* მოვხსნათ ლურჯი ჩარჩო click-ზე ზოგიერთ ბრაუზერში */
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  outline: none;
 }
 
 .add-to-cart-button:hover {
-  background-color: #229954; /* ოდნავ მუქი მწვანე hover-ზე */
-  transform: translateY(-3px); /* უფრო გამოკვეთილი ზევით აწევა */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* ჩრდილი უფრო გამოკვეთილი ხდება hover-ზე */
+  background-color: #229954;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .add-to-cart-button:active {
-  background-color: #1e8449; /* კიდევ უფრო მუქი აქტიურ მდგომარეობაში */
-  transform: translateY(0); /* უკან დაბრუნება click-ზე */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ჩრდილი ოდნავ მცირდება click-ზე */
+  background-color: #1e8449;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive - დესკტოპის სტილები */
 @media (min-width: 769px) {
-  /* ... არსებული responsive სტილები ... */
-
   .add-to-cart-button {
-    padding: 18px 45px; /* დესკტოპზე უფრო მეტი padding */
-    font-size: 1.4rem; /* დესკტოპზე უფრო დიდი ფონტი */
+    padding: 18px 45px;
+    font-size: 1.4rem;
   }
 }

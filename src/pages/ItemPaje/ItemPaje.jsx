@@ -21,13 +21,13 @@ function ItemPaje({ Base_Objects = [], OnAddProduct }) {
       <div className="item-details">
         <h2 className='item-title'>{item.title}</h2>
         <ul className='item-details-list'>
-          <li>მასალა: {item.material}</li>
-          <li> {item.producer} </li>
+          <li>მასალა: {item.details.material}</li>
           <li>
-            ზომა: {item.size}
+            ზომა: {item.details.dimensions.general}
           </li>
+          <li>აღწერა: {item.description}</li>
         </ul>
-        <p className='item-price'>{item.price} </p>
+        <p className='item-price'>ფასი {item.price} ლ</p>
 
         {/* ***** ეს არის ახალი ღილაკი ***** */}
         <button className="add-to-cart-button" onClick={() => OnAddProduct(item)}>

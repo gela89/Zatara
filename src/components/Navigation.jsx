@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import { useState, useRef, useEffect } from 'react';
 import ShoppingPanel from './ShoppingPanel'
-import zataralogo from '../img/zataralogo-4.png'
+import zataralogo from '../img/zataralogo-5.png'
 
 function Navigation({ orders, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +14,8 @@ function Navigation({ orders, onDelete }) {
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const toggleCart = () => setCardOpen(prev => !prev);
+
+  const cartCount = orders.length;
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -61,10 +63,13 @@ function Navigation({ orders, onDelete }) {
       </div>
 
       <div className="shopCard-cont">
-        <FaShoppingCart
-          onClick={toggleCart}
-          className={`shopCard ${cardOpen ? 'active' : ''}`}
-        />
+        <div className="cart-icon-wrapper" onClick={toggleCart}>
+          <FaShoppingCart className={`shopCard ${cardOpen ? 'active' : ''}`} />
+          {cartCount > 0 && (
+            <span className="cart-badge">{cartCount}</span>
+          )}
+        </div>
+
         <ShoppingPanel
           orders={orders}
           onDelete={onDelete}

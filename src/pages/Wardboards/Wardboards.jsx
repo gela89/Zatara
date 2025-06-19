@@ -15,7 +15,7 @@ export default function Wardboards({Base_Objects,OnAddProduct}){
     <ShowPajes 
       item={item}
       title={item.title}
-      size={item.size}
+      size={item.details.dimensions.general}
       price={item.price}
       addOrder={OnAddProduct}
      />
