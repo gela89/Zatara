@@ -31,7 +31,7 @@ function ItemPaje({ Base_Objects = [], OnAddProduct }) {
 
         {/* ***** ეს არის ახალი ღილაკი ***** */}
         <button className="add-to-cart-button" onClick={() => OnAddProduct(item)}>
-          დამატება კალათაში
+           კალათაში დამატება
         </button>
       </div>
    

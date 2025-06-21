@@ -1,39 +1,37 @@
-/* General body styling for context */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scroll when panel is out */
+/* უნივერსალური გამწმენდი */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Shop Order Wrapper Styles */
+/* კალათის wrapper */
 .shop-order-wrapper {
-  position: fixed; /* Use fixed for sticking to viewport */
+  position: fixed;
   top: 0;
-  right: -350px; /* Initially hidden outside the viewport */
-  width: 350px; /* Adjust as needed */
-  height: 100vh; /* Full viewport height */
+  right: -350px;
+  width: 350px;
+  height: 100vh;
   background-color: #fff;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15); /* Stronger shadow */
-  transition: right 0.4s ease-out; /* Smoother transition */
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
+  transition: right 0.4s ease-out;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in width/height */
+  box-sizing: border-box;
 }
 
 .shop-order-wrapper.open {
-  right: 0; /* Visible when open */
+  right: 0;
 }
 
-/* Header for the shopping panel */
+/* კალათის ჰედერი */
 .shop-order-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee; /* Light separator */
+  border-bottom: 1px solid #eee;
 }
 
 .shop-order-header h2 {
@@ -43,39 +41,43 @@ body {
   font-weight: 600;
 }
 
-.shop-order-header .close-btn {
-  font-size: 28px; /* Larger close icon */
+/* X ღილაკი */
+.close-btn {
+  all: unset; /* Reset all default styles */
+  font-size: 28px;
   cursor: pointer;
   color: #888;
   transition: color 0.2s ease-in-out;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.shop-order-header .close-btn:hover {
+.close-btn:hover {
   color: #333;
 }
 
-/* Container for order items, allowing scroll if many items */
+/* ორდერების სია */
 .order-items-list {
-  flex-grow: 1; /* Takes available space */
-  overflow-y: auto; /* Enable vertical scroll if content overflows */
-  padding-right: 10px; /* Space for scrollbar */
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-/* Styles for individual order items */
+/* ერთეული ორდერი */
 .orders-cont {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #ddd; /* Lighter border */
-  border-radius: 8px; /* Slightly more rounded corners */
-  background-color: #fefefe; /* Very light background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fefefe;
   position: relative;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .orders-cont img {
-  width: 80px; /* Slightly larger image */
+  width: 80px;
   height: 80px;
   object-fit: cover;
   margin-right: 15px;
@@ -84,8 +86,8 @@ body {
 
 .orders-cont .item-details {
   flex-grow: 1;
-  display: flex; /* Use flex for details */
-  flex-direction: column; /* Stack name and price */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -99,7 +101,7 @@ body {
 
 .orders-cont .price-quantity {
   display: flex;
-  align-items: baseline; /* Align prices at baseline */
+  align-items: baseline;
   font-size: 15px;
   color: #555;
 }
@@ -107,8 +109,8 @@ body {
 .orders-cont .Price {
   margin: 0;
   font-weight: bold;
-  color: #e44d26; /* Modern orange for price */
-  margin-right: 5px; /* Space between price and quantity */
+  color: #e44d26;
+  margin-right: 5px;
 }
 
 .orders-cont .quantity {
@@ -118,21 +120,21 @@ body {
 
 .orders-cont .delete {
   position: absolute;
-  top: 8px; /* Position closer to top-right corner */
+  top: 8px;
   right: 8px;
-  font-size: 22px; /* Larger delete icon */
+  font-size: 22px;
   color: #aaa;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 }
 
 .orders-cont .delete:hover {
-  color: #dc3545; /* Red on hover */
+  color: #dc3545;
 }
 
-/* Total amount section */
+/* ჯამი */
 .total-amount {
-  margin-top: 20px; /* Space from last item or empty message */
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #eee;
   display: flex;
@@ -143,22 +145,22 @@ body {
   color: #333;
 }
 
-.total-amount span:last-child { /* Target the price span */
-  color: #007bff; /* Blue for total price */
+.total-amount span:last-child {
+  color: #007bff;
 }
 
-/* Buttons section */
+/* ღილაკები */
 .shop-actions {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px; /* More space between buttons */
+  gap: 12px;
 }
 
 .shop-actions button {
-  padding: 14px 25px; /* Larger padding for buttons */
+  padding: 14px 25px;
   border: none;
-  border-radius: 6px; /* Slightly more rounded */
+  border-radius: 6px;
   font-size: 17px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
@@ -166,7 +168,7 @@ body {
 }
 
 .shop-actions .checkout-btn {
-  background-color: #28a745; /* Green for checkout */
+  background-color: #28a745;
   color: #fff;
 }
 
@@ -176,7 +178,7 @@ body {
 }
 
 .shop-actions .continue-shopping-btn {
-  background-color: #f8f9fa; /* Light grey for continue shopping */
+  background-color: #f8f9fa;
   color: #333;
   border: 1px solid #ced4da;
 }
@@ -186,11 +188,11 @@ body {
   transform: translateY(-1px);
 }
 
-/* Empty order message */
+/* ცარიელი კალათა */
 .empty-order-message {
   flex-grow: 1;
   display: flex;
-  flex-direction: column; /* Stack message and text */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;

@@ -9,7 +9,7 @@ function Items(props) {
 
       <h2>{props.obj.title}</h2>
       
-      <p>ზომა. {props.obj.size}</p>
+      <p>ზომა. {props.obj.details.dimensions.general}</p>
       <p className="Price">ფასი. {props.obj.price} </p>
 
     </div>
