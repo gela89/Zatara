@@ -1,7 +1,7 @@
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart, FaUtensils, FaTable, FaBoxes, FaInfoCircle } from "react-icons/fa";
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import ShoppingPanel from './ShoppingPanel';
 import zataralogo from '../img/zataralogo-5.png';
 
@@ -17,27 +17,28 @@ function Navigation({ orders, onDelete }) {
 
   const cartCount = orders.length;
 
-  const closeCartOnOutsideClick = (e) => {
+  // ✅ useCallback ensures stable function references
+  const closeCartOnOutsideClick = useCallback((e) => {
     if (cartOpen && cartRef.current && !cartRef.current.contains(e.target)) {
       setCartOpen(false);
     }
-  };
+  }, [cartOpen]);
 
-  const closeMenuOnOutsideClick = (e) => {
+  const closeMenuOnOutsideClick = useCallback((e) => {
     if (menuOpen && menuRef.current && !menuRef.current.contains(e.target)) {
       setMenuOpen(false);
     }
-  };
+  }, [menuOpen]);
 
   useEffect(() => {
     document.addEventListener('mousedown', closeCartOnOutsideClick);
     return () => document.removeEventListener('mousedown', closeCartOnOutsideClick);
-  }, [cartOpen]);
+  }, [closeCartOnOutsideClick]); // ✅ now ESLint is happy
 
   useEffect(() => {
     document.addEventListener('mousedown', closeMenuOnOutsideClick);
     return () => document.removeEventListener('mousedown', closeMenuOnOutsideClick);
-  }, [menuOpen]);
+  }, [closeMenuOnOutsideClick]); // ✅ now ESLint is happy
 
   return (
     <div className="navigation-cont">
