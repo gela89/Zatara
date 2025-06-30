@@ -1,4 +1,4 @@
-import './App.css';
+import './RootStyles.css';
 import Header from './components/Header'
 import Main from './components/Main'
 import {useState} from 'react'
@@ -17,7 +17,7 @@ const [order,setOrder]=useState([])
 
   return(
     //All Product category Routs
-  <div className="Appcontainer">,
+  <div className="Rootcontainer">,
  
     <Header orders={order} 
     onDelete={deleteOrder}/>
