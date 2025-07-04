@@ -6,7 +6,8 @@ function ShowPajes(props) {
       <ul> 
         <h2>{props.title}</h2>
         <p>ზომა: {props.size}</p>
-        <p className="Price">ფასი: {props.price}</p>
+        <p className="Price">ფასი: {props.price}
+        </p>
       </ul>
     </div>
   );

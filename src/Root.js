@@ -14,7 +14,6 @@ import {data} from './data'
 
 function Root(){
 const [order,setOrder]=useState([])
-
   return(
     //All Product category Routs
   <div className="Rootcontainer">,

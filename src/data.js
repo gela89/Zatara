@@ -1,18 +1,10 @@
-import img1 from "./img/icture-1.jpg";
-import img2 from "./img/icture-2.png";
-import img3 from "./img/icture-3.jpg";
-import img4 from "./img/icture-4.jpg";
-import img5 from "./img/icture-5.jpg";
-import img6 from "./img/icture-6.jpg";
-import img7 from "./img/icture-7.jpg";
-import img8 from "./img/icture-8.jpg";
-//import img9 from "https://res.cloudinary.com/dluqegrav/image/upload/v1751278227/FB_IMG_1746686130069_mmratz.jpg";
+
 
 export const data = [
   {
     id: 1,
     title: "SP-1 | სამზარეულო | თურქული",
-    img: img1,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312496/icture-1_zednn0.jpg",
     category: "Kitchen",
     price: 1250.0,
     description: "მაღალი ხარისხის სამზარეულო მარმარილოს ეფექტით.",
@@ -26,7 +18,7 @@ export const data = [
   {
     id: 2,
     title: "მაგიდა ლითონის ფეხებით",
-    img: img2,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312495/icture-2_lrxomc.jpg",
     category: "Tables",
     price: 199.0,
     description: "ლითონის ფეხებით მაგიდა, ზომა: 70x120 სმ.",
@@ -40,7 +32,7 @@ export const data = [
   {
     id: 3,
     title: "გასაშლელი მაგიდა typ 92 EVORA",
-    img: img3,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312496/icture-3_bz6fyj.jpg",
     category: "Tables",
     price: 500.0,
     description: "გასაშლელი მაგიდა მწვანე და მუხისფერი კომბინაციით.",
@@ -54,7 +46,7 @@ export const data = [
   {
     id: 4,
     title: "MDF სამზარეულო მაღალი ხარისხის",
-    img: img4,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312497/icture-4_dugy0q.jpg",
     category: "Kitchen",
     price: 1250.0,
     description: "მაღალი ხარისხის MDF სამზარეულო პრიალა ზედაპირით.",
@@ -68,7 +60,7 @@ export const data = [
   {
     id: 5,
     title: "MDF სამზარეულო მაღალი ხარისხის",
-    img: img5,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312497/icture-5_bvacar.jpg",
     category: "Wardboards",
     price: 1250.0,
     description: "პრაქტიკული და გამძლე სამზარეულო მუქ ფერებში.",
@@ -82,7 +74,7 @@ export const data = [
   {
     id: 6,
     title: "SP-1 | სამზარეულო | Selsa Mobilya",
-    img: img6,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312497/icture-6_qtqcyf.jpg",
     category: "Kitchen",
     price: 2000,
     description:
@@ -111,7 +103,7 @@ export const data = [
   {
     id: 7,
     title: "SP-2 | გარდერობი | Aristo სტილი",
-    img: img7,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312497/icture-7_kbeswj.jpg",
     category: "Wardboards",
     price: 1350,
     description:
@@ -141,7 +133,7 @@ export const data = [
   {
     id: 8,
     title: "TV კედელი / მედია სისტემა",
-    img: img8,
+    img: "https://res.cloudinary.com/dluqegrav/image/upload/v1751312497/icture-5_bvacar.jpg",
     category: "Wardboards",
     price: 1100,
     description:

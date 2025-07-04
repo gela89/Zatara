@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaShoppingCart, FaUtensils, FaTable, FaBoxes, FaInfoCircle } from "react-icons/fa";
 import { useState, useRef, useEffect, useCallback } from 'react';
 import ShoppingPanel from './ShoppingPanel';
-import zataralogo from '../img/zataralogo-5.png';
+
 
 function Navigation({ orders, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,7 +49,7 @@ function Navigation({ orders, onDelete }) {
 
       {/* Logo */}
       <Link className="LogoZatara" to="/">
-        <img id="zataralogo" src={zataralogo} alt="ZaTaRa Logo" />
+        <img id="zataralogo" src="https://res.cloudinary.com/dluqegrav/image/upload/v1751312499/zataralogo-5_kpwazq.png" alt="ZaTaRa Logo" />
       </Link>
 
       {/* Menu Links */}
