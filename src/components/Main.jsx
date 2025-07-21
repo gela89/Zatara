@@ -1,17 +1,23 @@
-import './MainStyle.css'
-import Items from './Items'
-import {data} from '../data'
+import './MainStyle.css';
+import Items from './Items';
 
-
-function Main(props){
+function Main({ products, OnAddProduct }) { 
 
   return(
     <main>
-      {data.map(el=>(
-      <Items obj={el} />
-      ))}
+      {products && products.length > 0 ? (
+        products.map(el => {
+          // აქ შეგიძლიათ დალოგოთ obj.id
+          console.log("ოდქტის ID:",  typeof el); // ან უბრალოდ console.log(el.id);
+          return (
+            <Items key={el.id} obj={el} OnAddProduct={OnAddProduct} /> 
+          );
+        })
+      ) : (
+        <p>პროდუქტები არ მოიძებნა ან იტვირთება...</p>
+      )}
     </main>
-    )
+  );
 }
 
-export default Main
+export default Main;
