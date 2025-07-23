@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './itemPaje.css'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'; 
+import './itemPaje.css';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
+// Render-ზე ატვირთული ბექენდის URL
+const BASE_URL = "https://zatara-backend.onrender.com";
 
-
-function ItemPaje({ products, addOrder }) { // <-- მიიღეთ products და addOrder
+function ItemPaje({ products, addOrder }) {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [loadingItem, setLoadingItem] = useState(true);
@@ -16,36 +17,31 @@ function ItemPaje({ products, addOrder }) { // <-- მიიღეთ products �
       setLoadingItem(true);
       setErrorItem(null);
       try {
-        // პირდაპირი API ზარი ერთი პროდუქტის მისაღებად
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
-        // MongoDB-ს _id-ს ვაქცევთ id-ად ფრონტენდისთვის, თუ არ არის უკვე
+        // აქ შეცვლილია URL შენს Render ბექენდზე
+        const response = await axios.get(`${BASE_URL}/api/products/${id}`);
         const fetchedItem = { ...response.data, id: response.data._id };
         setItem(fetchedItem);
       } catch (err) {
         setErrorItem('პროდუქტი ვერ მოიძებნა ან შეცდომა ჩატვირთვისას.');
         console.error("Single Item API Fetch Error:", err);
-        setItem(null); // დარწმუნდით, რომ item არის null შეცდომისას
+        setItem(null);
       } finally {
         setLoadingItem(false);
       }
     };
 
-    // თუ products მასივი უკვე ჩატვირთულია და შეიცავს ამ ელემენტს, გამოიყენეთ ის
-    // ეს თავიდან აგვარიდებს ზედმეტ API ზარებს
     if (products && products.length > 0) {
-      const foundItem = products.find(p => p.id === id); // id უკვე ObjectId-დან არის (სტრიქონი)
+      const foundItem = products.find(p => p.id === id);
       if (foundItem) {
         setItem(foundItem);
         setLoadingItem(false);
       } else {
-        // თუ products-ში ვერ მოიძებნა, მაინც ვცადოთ API-ით წამოღება (შეიძლება პირდაპირ URL-ით შემოვიდა მომხმარებელი)
         fetchItem();
       }
     } else {
-      // თუ products მასივი ჯერ ცარიელია, აუცილებლად გავაკეთოთ API ზარი
       fetchItem();
     }
-  }, [id, products]); // დამოკიდებულებები: id (URL-დან) და products (Root-დან)
+  }, [id, products]);
 
   if (loadingItem) {
     return <div>პროდუქტის დეტალები იტვირთება...</div>;
@@ -61,27 +57,22 @@ function ItemPaje({ products, addOrder }) { // <-- მიიღეთ products �
 
   return (
     <div className='item-page-container'>
-      <img src={item.img} alt={item.title} className='item-image'/>
+      <img src={item.img} alt={item.title} className='item-image' />
 
       <div className="item-details">
         <h2 className='item-title'>{item.title}</h2>
         <ul className='item-details-list'>
           <li>მასალა: {item.details.material}</li>
-          <li>
-            ზომა: {item.details.dimensions.general}
-            
-          </li>
+          <li>ზომა: {item.details.dimensions.general}</li>
           <li>აღწერა: {item.description}</li>
           <li>{item.details.features}.</li>
         </ul>
         <p className='item-price'>ფასი {item.price} ლ</p>
 
-
         <button className="add-to-cart-button" onClick={() => addOrder(item)}>
-           კალათაში დამატება
+          კალათაში დამატება
         </button>
       </div>
-   
     </div>
   );
 }
